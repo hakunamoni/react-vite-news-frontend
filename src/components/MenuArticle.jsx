@@ -17,7 +17,7 @@ const MenuArticle = ({onAriticlesFetched, onMenuArticleSelect}) => {
 
     return (
         <div className="w-1/4 p-4 overflow-y-auto h-dvh scrollable-content">
-            <HeaderMenu />
+            <HeaderMenu menuButton="articles"/>
             <FetchArticlesByDate onAriticlesFetched={handleArticlesFetched} />
             <ListArticleTitles articles = {articles} onMenuArticleSelect = {handleArticleSelection}/>
         </div>

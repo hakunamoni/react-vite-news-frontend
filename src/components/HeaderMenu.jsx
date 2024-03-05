@@ -1,31 +1,31 @@
 import React, {useState} from "react"
 import HeaderButton from "./header/HeaderButton";
-import { HeaderBttonsInfo } from "../constants/data";
+import { HeaderButtonsInfo } from "../constants/data";
 
-const HeaderMenu = () => {
-    const [headerBtnSelected, setHeaderBtnSelected] = useState(0);
+const HeaderMenu = ({menuButton}) => {
+    const [headerBtnSelected, setHeaderBtnSelected] = useState(menuButton);
 
     const handleHeaderBtn = (selectedBtn) => {
-        console.log(HeaderBttonsInfo);
-        console.log("btn " + selectedBtn);
         setHeaderBtnSelected(selectedBtn);
     };
 
     return (
-        <menu className="flex flex-wrap justify-evenly border-b pb-4">
-            {/* <button>
-                <a href="/articles">
-                    <img src="/img/arrow/arrow_left.png" className="w-6"/>
-                </a>
-            </button> */}
-            <HeaderButton onSelect={() => handleHeaderBtn("1")}></HeaderButton>
-            <HeaderButton onSelect={() => handleHeaderBtn("2")}></HeaderButton>
-            <HeaderButton onSelect={() => handleHeaderBtn("3")}></HeaderButton>
-            {/* {
-                HeaderBttonsInfo.length && (
-                    <H></H>
+        <menu id="headerMenu" className="flex flex-wrap justify-evenly border-b pb-4">
+            {
+                HeaderButtonsInfo.length && (
+                    HeaderButtonsInfo.map((btnInfo) => {
+                        return (
+                            <HeaderButton 
+                                onSelect={() => handleHeaderBtn(btnInfo.id)}
+                                isSelected={headerBtnSelected === btnInfo.id}
+                                key={btnInfo.id}
+                                hrefVal={btnInfo.hrefVal}
+                                imgUrl={btnInfo.imgUrl}
+                            />
+                        )
+                    })
                 )
-            } */}
+            }
         </menu>
     )
 }

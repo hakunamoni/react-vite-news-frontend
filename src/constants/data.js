@@ -1,19 +1,19 @@
 import React from "react"
 
-export const HeaderBttonsInfo = [
+export const HeaderButtonsInfo = [
     {
         id: "articles",
         hrefVal: "/articles",
-        imgUrl: "/img/arrow/arrow_left.png"
+        imgUrl: "/img/icons/news_5.png"
     },
     {
         id: "quotes",
         hrefVal: "/quotes",
-        imgUrl: "/img/arrow/arrow_right.png"
+        imgUrl: "/img/icons/quotes.png"
     },
     {
         id: "videos",
         hrefVal: "/videos",
-        imgUrl: "/img/arrow/arrow_right.png"
+        imgUrl: "/img/icons/video_3.png"
     },
 ]

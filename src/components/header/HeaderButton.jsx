@@ -1,10 +1,12 @@
-// import React from "react"
+import React from "react"
+import {Link} from "react-router-dom"
 
-const HeaderButton = ({children, onSelect}) => {
+const HeaderButton = (props) => {
     return (
-        <button onClick={onSelect}>
-            {/* <a href={children.hrefVal}>
-                <img src={children.imgUrl} className="w-6"/>
+        <button onClick={props.onSelect} className={props.isSelected ? 'active' : undefined}>
+            <Link to={props.hrefVal}><img src={props.imgUrl} className="w-8"/></Link>
+            {/* <a href={props.hrefVal}>
+                <img src={props.imgUrl} className="w-6"/>
             </a> */}
         </button>
     );
