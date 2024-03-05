@@ -35,7 +35,7 @@ const FetchArticlesByDate = ({onAriticlesFetched}) => {
     }
 
     return (
-        <div className="mb-4 flex items-center">
+        <div className="flex items-center py-4">
             <button onClick={handleYesterdayClick} className="flex-none"><img src="/img/arrow/arrow_left.png" className="w-6"/></button>
             <div className="flex-1">
                 <DatePicker selected={selectedDate} onChange={handleDateChange} className="text-center rounded-md bg-[#f9f9f9] py-1.5"/>

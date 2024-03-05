@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import FetchArticlesByDate from './articles/sidemenu/DateSelect/FetchArticlesByDate'
 import ListArticleTitles from './articles/sidemenu/ArticlesList/ListArticleTitles';
+import HeaderMenu from './HeaderMenu';
 
 const MenuArticle = ({onAriticlesFetched, onMenuArticleSelect}) => {
     const [articles, setArticles] = useState([]);
@@ -15,7 +16,8 @@ const MenuArticle = ({onAriticlesFetched, onMenuArticleSelect}) => {
     }
 
     return (
-        <div className="w-1/4 p-4 border-r overflow-y-auto h-dvh scrollable-content">
+        <div className="w-1/4 p-4 overflow-y-auto h-dvh scrollable-content">
+            <HeaderMenu />
             <FetchArticlesByDate onAriticlesFetched={handleArticlesFetched} />
             <ListArticleTitles articles = {articles} onMenuArticleSelect = {handleArticleSelection}/>
         </div>
